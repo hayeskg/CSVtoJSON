@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "system": "asset1",
+      "version": "v3.6",
+      "d1": "2",
+      "d2": "2",
+      "d3": "59"
+    },
+    {
+      "id": "2",
+      "system": "plant3",
+      "version": "v1.0",
+      "d1": "56",
+      "d2": "77",
+      "d3": "8.8"
+    },
+    {
+      "id": "5",
+      "system": "gateway22",
+      "version": "v6.7",
+      "d1": "false",
+      "d2": "30",
+      "d3": "8"
+    },
+    {
+      "id": "14",
+      "system": "vehicle3",
+      "version": "0.4",
+      "d1": "22",
+      "d2": "67",
+      "d3": "true"
+    }
+  ]
+}
