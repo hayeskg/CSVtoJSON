@@ -1,1 +1,1 @@
-CSV to JSON converter with Server_API
+CSV to JSON converter with API for JSON requests
