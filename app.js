@@ -1,7 +1,18 @@
+const express = require('express');
+const apiRouter = require('./routes/api');
+const app = express();
+//
 const CSVToJSON = require('csvtojson');
 const fs = require('fs');
 
-CSVToJSON().fromFile('./source.csv').then(source => {
+app.use(express.json());
+app.use(express.static('public'));
+app.set('view-engine', 'ejs');
+
+app.use('/api', apiRouter);
+
+
+CSVToJSON().fromFile('./data/source.csv').then(source => {
   source.push({
     'id': '14',
     'system': 'vehicle3',
@@ -11,6 +22,12 @@ CSVToJSON().fromFile('./source.csv').then(source => {
     'd3': 'true',
   });
   const outFormat = { 'data': [...source] };
-  console.log(outFormat);
-  fs.writeFileSync('./output.json', JSON.stringify(outFormat, null, 2));
+  fs.writeFileSync('./data/output.json', JSON.stringify(outFormat, null, 2));
+});
+
+
+
+app.listen(8000, (err) => {
+  if (err) next(err);
+  else console.log('Listening on port 8000...')
 });
